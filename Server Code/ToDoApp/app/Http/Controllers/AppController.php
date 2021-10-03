@@ -17,17 +17,6 @@ class AppController extends Controller
        return $app_model->getTask();
     }
 
-
-
-
-
-
-
-
-
-
-
-    
     public function saveTask(Request $request)
     {
         $title=$request->title;
@@ -36,6 +25,7 @@ class AppController extends Controller
         $app_model = new AppModel;
         return $app_model->saveTask( $title, $description,  $priority);
     }
+
     public function updateTask(Request $request)
     {
         $id=$request->id;
@@ -45,6 +35,7 @@ class AppController extends Controller
         $app_model = new AppModel;
         return $app_model->updateTask(  $id,$title, $description,  $priority);
     }
+    
     public function deleteTask(Request $request)
     {
         $id=$request->id;
